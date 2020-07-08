@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <script src="https://kit.fontawesome.com/fcad48ef90.js" crossorigin="anonymous"></script>
+
+    {% block header_imports %} {% endblock header_imports %}
+</head>
+<body>
+    
+    <div class="framed-navigation">
+        <a class="navigation-block navigation-logo-area" href="{% url 'main' %}">
+            <div class="name-logo">Full Stack Software Engineer</div>
+            <div class="subtitle-logo">grigori zaika</div>
+        </a>
+        
+        <div class="navigation-block menu-block">
+            <div class="menu-grid">
+                <a class="menu-grid-item" href="{% url 'demos:demo_list' %}">
+                    <i class="far fa-eye" aria-hidden="true"></i>
+                    <div class="text-block">demos</div>
+                </a>
+                <a class="menu-grid-item">
+                    <i class="fas fa-toilet-paper" aria-hidden="true"></i>
+                    <i aria-hidden="true"></i>
+                    <div class="text-block">articles</div>
+                </a>
+                <a class="menu-grid-item">
+                    <i class="fas fa-american-sign-language-interpreting" aria-hidden="true"></i>
+                    <div class="text-block">contact</div>
+                </a>
+                <a class="menu-grid-item">
+                    <i class="fas fa-glasses"></i>
+                    <div class="text-block">what's all this?</div>
+                </a>
+            </div>
+        
+        </div>
+        
+        <div class="navigation-block navigation-block-stub">
+        </div>
+    </div>
+    
+    <div class="gutter-left"></div>
+    
+    <div class="main-wrapper">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <div class="gutter-right"></div>
+</body>
+</html>
