@@ -5,13 +5,11 @@
     display: flex;
     flex-flow: column nowrap;
     min-height: 50vw;
-    /* padding: 10px; */
 }
 
 .demo-header {
     position: relative;
     background-color: #eb5959;
-    /* background-color: #000; */
     color: #ddd;
     width: 100%;
     height: 3vw;
@@ -42,21 +40,18 @@
 .demo-item {
     position: relative;
     border-bottom: 4px solid #000;
-
     background-color: #f8fcf1;
     width: 100%;
     min-height: calc(5vw + 4px);
     max-height: calc(5vw + 4px);
     overflow: hidden;
     margin-bottom: 1vw;
-
     transition: max-height 0.4s linear 0.4s, min-height 0.4s linear 0.4s;
     -webkit-transition: max-height 0.4s linear 0.4s, min-height 0.4s linear 0.4s;
 }
 
 .demo-item-open {
     max-height: 100vw;
-
     border-left: 4px solid #000;
     border-right: 4px solid #000;
     transform: scale(1.02);
@@ -122,12 +117,17 @@
     background-color: #b9e874;
 }
 
+
 .demo-item .demo-item-content {
+    position: absolute;
     width: 100%;
     min-height: 5vw;
     padding: 10px;
     background-color: #f2fae5;
 }
+
+/* form */
+
 
 .demo-item .demo-item-content textarea {
     border: 4px solid black;
@@ -149,3 +149,9 @@
     transition: opacity 0.4s linear 0.4s;
     opacity: 1;
 }
+
+/* /form */
+
+/* description */
+
+/* /descrption */

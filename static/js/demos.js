@@ -1,16 +1,15 @@
 function toggleDemo(opener) {
-    let then = performance.now()
-
     let $opener = $(opener);
 
     let $demoItem = $opener.parent().parent();
     let $openerIcon = $opener.find('i');
+    let $demoContent = $demoItem.find('.demo-item-content');
+    let $demoHeader = $demoItem.find('.demo-item-header');
     
     if ($openerIcon.hasClass("fa-window-maximize")) {
-        
         $openerIcon.removeClass("fa-window-maximize");
         $openerIcon.addClass("fa-window-minimize");
-
+            
     } else if ($openerIcon.hasClass("fa-window-minimize")) {
         $openerIcon.removeClass("fa-window-minimize");
         $openerIcon.addClass("fa-window-maximize");
@@ -18,17 +17,16 @@ function toggleDemo(opener) {
 
     if ($demoItem.hasClass("demo-item-open")) {
         $demoItem.removeClass("demo-item-open");
-        
-        let now = performance.now()
-        console.log("execution time for class remove", now - then);
+        $demoItem.css('min-height', 'calc(5vw + 4px)');
+
     } else {
         $demoItem.addClass("demo-item-open");
-        
-        let now = performance.now()
-        console.log("execution time for class add", now - then);
+        $demoItem.css('min-height', $demoContent.outerHeight() + $demoHeader.outerHeight() + 'px');
+    
     }
 
 }
+
 
 $(document).ready(function() {
     let $demoOpeners = $(".demo-item .opener");
